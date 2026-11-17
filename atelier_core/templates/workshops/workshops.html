@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Workshops{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'workshops/workshops.css' %}">
+{% endblock %}
+
+{% block content %}
+<h1 class="visually-hidden">Workshops</h1>
+
+<section class="section section--dark">
+    <div class="split">
+        <div class="split__media">
+            <img class="photo photo--pill workshop-img" src="{% static 'img/workshop-zilverklei.jpg' %}" alt="Zilveren ring met bloem en parel">
+        </div>
+        <div>
+            <h2>Workshop Zilverklei</h2>
+            <p>Lorem ipsum dolor sit amet. Sit voluptatibus voluptates rem magnam officia ut neque quidem eum expedita</p>
+        </div>
+    </div>
+</section>
+
+<section class="section section--brown-light">
+    <div class="split">
+        <div>
+            <h2>Workshop bloemschikken</h2>
+            <p>Lorem ipsum dolor sit amet. Sit voluptatibus voluptates rem magnam officia ut neque quidem eum expedita</p>
+        </div>
+        <div class="split__media">
+            <img class="photo photo--pill workshop-img" src="{% static 'img/workshop-bloemschikken.jpg' %}" alt="Witte dahlia tussen takken">
+        </div>
+    </div>
+</section>
+
+<section class="section section--dark">
+    <div class="split">
+        <div class="split__media">
+            <img class="photo photo--pill workshop-img" src="{% static 'img/workshop-keramiek.jpg' %}" alt="Keramieken rozen naast een boeddhabeeld met kaars">
+        </div>
+        <div>
+            <h2>Workshop keramieken</h2>
+            <p>Lorem ipsum dolor sit amet. Sit voluptatibus voluptates rem magnam officia ut neque quidem eum expedita</p>
+        </div>
+    </div>
+
+    <div class="workshop-cta">
+        <h2>Heeft u interesse?</h2>
+        <p>Voor meer info, of als u een cursus wilt volgen,<br>stuur dan een e-mail naar:</p>
+        <a class="workshop-cta__mail" href="mailto:{{ site.email }}">{% include 'includes/icon_mail.html' %}{{ site.email }}</a>
+    </div>
+</section>
+{% endblock %}

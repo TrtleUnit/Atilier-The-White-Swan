@@ -1,0 +1,22 @@
+.workshop-img {
+    aspect-ratio: 16 / 9;
+}
+
+.workshop-cta {
+    max-width: 40rem;
+    margin: clamp(3rem, 8vw, 6rem) auto 0;
+}
+
+.workshop-cta__mail {
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 0.5rem;
+    font-size: 1.3em;
+    text-decoration: none;
+    overflow-wrap: anywhere;
+}
+
+.workshop-cta__mail:hover {
+    text-decoration: underline;
+}
