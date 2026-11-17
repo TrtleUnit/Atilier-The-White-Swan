@@ -1,0 +1,19 @@
+.hero img {
+    width: 100%;
+    max-height: 70vh;
+    object-fit: cover;
+}
+
+.home-portrait {
+    max-width: 320px;
+    justify-self: center;
+}
+
+.home-necklace {
+    max-width: 440px;
+    justify-self: center;
+}
+
+.home-necklace .photo {
+    aspect-ratio: 3 / 4;
+}

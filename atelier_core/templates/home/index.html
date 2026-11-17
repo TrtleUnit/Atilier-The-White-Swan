@@ -8,4 +8,64 @@
 {% endblock %}
 
 {% block content %}
+<section class="hero">
+    <img src="{% static 'img/hero.jpg' %}" alt="Zilveren sculptuur van een zwaan op een vijver met waterlelie">
+</section>
+
+<section class="section section--dark">
+    <div class="split split--wide-text">
+        <div>
+            <p>Lorem ipsum dolor sit amet. Sit voluptatibus voluptates rem magnam officia ut neque quidem eum expedita sequi. Ea voluptatem ipsa est</p>
+            <p>Lorem ipsum dolor sit amet. Sit voluptatibus voluptates rem magnam officia ut neque quidem eum expedita sequi. Ea voluptatem ipsa est</p>
+        </div>
+        <div class="split__media home-portrait">
+            <img class="photo photo--soft" src="{% static 'img/portrait.jpg' %}" alt="Portret van de edelsmid">
+        </div>
+    </div>
+</section>
+
+<section class="section section--taupe">
+    <div class="split split--wide-media">
+        <div class="split__media">
+            <img class="photo" src="{% static 'img/markt.jpg' %}" alt="Marktkraam vol handgemaakte sieraden">
+        </div>
+        <div>
+            <h2>In persoon te vinden</h2>
+            <p>Lorem ipsum dolor sit amet. Sit voluptatibus voluptates rem magnam officia ut neque quidem eum expedita</p>
+            <p>sequi. Ea voluptatem ipsa est Lorem ipsum dolor sit amet. Sit voluptatibus voluptates rem magnam officia ut neque quidem</p>
+            <p class="more-info">Voor meer info</p>
+            <a class="btn" href="{% url 'contact' %}">click hier</a>
+        </div>
+    </div>
+</section>
+
+<section class="section section--brown">
+    <div class="split">
+        <div>
+            <h2>Hand gemaakte sieraden</h2>
+            <p>Lorem ipsum dolor sit amet. Sit voluptatibus voluptates rem magnam officia ut neque quidem eum expedita</p>
+            <h2>Maatwerk sieraden</h2>
+            <p>Lorem ipsum dolor sit amet. Sit voluptatibus voluptates rem magnam officia ut neque quidem eum expedita</p>
+            <p class="more-info">Voor meer info:</p>
+            <a class="btn" href="{% url 'producten' %}">click hier</a>
+        </div>
+        <div class="split__media home-necklace">
+            <img class="photo" src="{% static 'img/ketting.jpg' %}" alt="Zilveren spang met hanger op een houten plank">
+        </div>
+    </div>
+</section>
+
+<section class="section section--dark">
+    <div class="split split--wide-media">
+        <div class="split__media">
+            <img class="photo" src="{% static 'img/workshop-keramiek.jpg' %}" alt="Keramieken rozen naast een boeddhabeeld met kaars">
+        </div>
+        <div>
+            <h2>Workshops</h2>
+            <p>Lorem ipsum dolor sit amet. Sit voluptatibus voluptates rem magnam officia ut neque quidem eum expedita Lorem ipsum dolor sit amet. Sit voluptatibus voluptates rem magnam officia ut neque quidem eum expedita</p>
+            <p class="more-info">Als u hier interesse in heeft<br>Voor meer info:</p>
+            <a class="btn btn--gold" href="{% url 'workshops' %}">click hier</a>
+        </div>
+    </div>
+</section>
 {% endblock %}

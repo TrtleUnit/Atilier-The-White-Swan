@@ -1,18 +1,70 @@
 {% load static %}
+{% with page=request.resolver_match.url_name %}
 <!DOCTYPE html>
 <html lang="nl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}Atelier{% endblock %}</title>
+    <title>{% block title %}Atelier{% endblock %} | Atelier The White Swan</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Courgette&display=swap">
     <link rel="stylesheet" href="{% static 'global.css' %}">
     {% block css %}{% endblock %}
 </head>
 <body>
-    <nav>
-        <a href="{% url 'index' %}">Home</a>
-    </nav>
+    <header class="site-header">
+        <a class="brand" href="{% url 'index' %}">
+            <img class="brand__logo" src="{% static 'img/logo.jpg' %}" alt="">
+            <span class="brand__text">
+                <span class="brand__small">Atelier</span>
+                <span class="brand__name">The White Swan</span>
+            </span>
+        </a>
+        <nav class="site-nav" aria-label="Hoofdmenu">
+            <a href="{% url 'index' %}" {% if page == 'index' %}aria-current="page"{% endif %}>Voorpagina</a>
+            <a href="{% url 'producten' %}" {% if page == 'producten' %}aria-current="page"{% endif %}>Producten</a>
+            <a href="{% url 'workshops' %}" {% if page == 'workshops' %}aria-current="page"{% endif %}>Workshops</a>
+            <a href="{% url 'contact' %}" {% if page == 'contact' %}aria-current="page"{% endif %}>Contact</a>
+        </nav>
+    </header>
 
-    {% block content %}{% endblock %}
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer class="site-footer">
+        <div class="site-footer__inner">
+            <img class="site-footer__img" src="{% static 'img/footer-zwanen.jpg' %}" alt="Schilderij van twee witte zwanen">
+
+            <div>
+                <h2 class="site-footer__title">Contact informatie:</h2>
+                <ul class="icon-list">
+                    <li>{% include 'includes/icon_phone.html' %}<a href="tel:{{ site.phone_link }}">{{ site.phone_display }}</a></li>
+                    <li>{% include 'includes/icon_mail.html' %}<a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
+                    <li>{% include 'includes/icon_home.html' %}<span>{{ site.location }}</span></li>
+                </ul>
+            </div>
+
+            <div>
+                <h2 class="site-footer__title">Pagina’s:</h2>
+                <ul class="plain-list">
+                    <li><a href="{% url 'index' %}">Home Pagina</a></li>
+                    <li><a href="{% url 'producten' %}">Producten</a></li>
+                    <li><a href="{% url 'workshops' %}">Workshops</a></li>
+                    <li><a href="{% url 'contact' %}">Contact</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h2 class="site-footer__title">Social Media:</h2>
+                <ul class="icon-list icon-list--social">
+                    <li><a href="{{ site.instagram_url }}" target="_blank" rel="noopener">{% include 'includes/icon_instagram.html' %}instagram</a></li>
+                    <li><a href="{{ site.facebook_url }}" target="_blank" rel="noopener">{% include 'includes/icon_facebook.html' %}facebook</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
+{% endwith %}

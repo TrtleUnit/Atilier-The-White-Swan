@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Producten{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'producten/producten.css' %}">
+{% endblock %}
+
+{% block content %}
+<section class="section section--taupe shop">
+    <h1 class="visually-hidden">Producten</h1>
+
+    <div class="filterbar">
+        <details class="filter">
+            <summary class="chip">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 6h18M6 12h12M10 18h4"/></svg>
+                Filter
+            </summary>
+            <form class="filter__menu" method="get">
+                {% for value, label in categories %}
+                    <label>
+                        <input type="checkbox" name="categorie" value="{{ value }}" {% if value in selected %}checked{% endif %}>
+                        {{ label }}
+                    </label>
+                {% endfor %}
+                <button class="btn" type="submit">Toepassen</button>
+            </form>
+        </details>
+
+        {% for chip in chips %}
+            <a class="chip" href="{{ chip.url }}" aria-label="Filter {{ chip.label }} verwijderen">
+                {{ chip.label }}
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+            </a>
+        {% endfor %}
+    </div>
+
+    <ul class="product-grid">
+        {% for product in products %}
+            <li class="product-card">
+                <img class="product-card__img" src="{% static product.image %}" alt="{{ product.name }}" loading="lazy">
+                <div class="product-card__info">
+                    <h2 class="product-card__name">{{ product.name }}</h2>
+                    <p class="product-card__price">€{{ product.price }}</p>
+                </div>
+            </li>
+        {% empty %}
+            <li class="product-grid__empty">Geen producten gevonden.</li>
+        {% endfor %}
+    </ul>
+</section>
+{% endblock %}

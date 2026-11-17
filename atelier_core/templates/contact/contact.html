@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Contact{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'contact/contact.css' %}">
+{% endblock %}
+
+{% block content %}
+<section class="section section--taupe">
+    <div class="split">
+        <div>
+            <h1 class="contact-heading">Kunstmarkten en beurzen</h1>
+            <p>Lorem ipsum dolor sit amet. Sit voluptatibus voluptates rem magnam officia ut neque quidem eum expedita sequi. Ea voluptatem ipsa est</p>
+        </div>
+
+        <aside class="follow-card">
+            <div class="follow-card__body">
+                <p class="follow-card__title">Wilt u op de hoogte blijven?<br>Volg ons op:</p>
+                <ul class="icon-list icon-list--social">
+                    <li><a href="{{ site.instagram_url }}" target="_blank" rel="noopener">{% include 'includes/icon_instagram.html' %}Instagram</a></li>
+                    <li><a href="{{ site.facebook_url }}" target="_blank" rel="noopener">{% include 'includes/icon_facebook.html' %}Facebook</a></li>
+                </ul>
+            </div>
+            <img class="follow-card__img photo photo--soft" src="{% static 'img/portrait.jpg' %}" alt="Portret van de edelsmid">
+        </aside>
+    </div>
+
+    <div class="split">
+        <div class="split__media framed">
+            <img class="photo" src="{% static 'img/markt.jpg' %}" alt="Marktkraam vol handgemaakte sieraden">
+        </div>
+        <div>
+            <h2>Wat u kan verwachten</h2>
+            <p>Lorem ipsum dolor sit amet. Sit voluptatibus voluptates rem magnam officia ut neque quidem eum expedita sequi. Ea voluptatem ipsa est</p>
+            <p>Lorem ipsum dolor sit amet. Sit voluptatibus voluptates rem magnam officia ut neque quidem eum expedita sequi. Ea voluptatem ipsa est</p>
+            <p>Lorem ipsum dolor sit amet. Sit voluptatibus voluptates rem magnam officia ut neque quidem eum expedita sequi. Ea voluptatem ipsa est</p>
+        </div>
+    </div>
+</section>
+{% endblock %}
